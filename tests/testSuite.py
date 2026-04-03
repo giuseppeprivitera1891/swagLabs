@@ -1,6 +1,6 @@
 from playwright.async_api import Page
 
-from pages import ProductPage
+from pages.ProductPage import ProductPage
 from pages.Login import LoginPage
 
 
