@@ -1,9 +1,6 @@
 from playwright.async_api import Page
 from pytest_playwright.pytest_playwright import page
 
-from pages import HomePage
-
-
 class LoginPage:
     def __init__(self, page: Page):
         self.page = page
@@ -15,7 +12,5 @@ class LoginPage:
         self.username_textField.fill(username)
         self.password_textField.fill(password)
         self.login_button.click()
-        return HomePage
-
 
 
