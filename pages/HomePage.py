@@ -1,4 +1,4 @@
-from playwright.async_api import Page, expect
+from playwright.sync_api import Page, expect
 
 
 class HomePage:
@@ -9,6 +9,7 @@ class HomePage:
 
     def add_to_cart(self):
         self.add_to_cart_button.click()
+        expect(self.get_element_cart).to_have_text("1")
         get_number_article = self.get_element_cart.text_content()
-        print(get_number_article)
-        expect(get_number_article).to_contain_text("1")
+        print(f"The badge text of the article is: {get_number_article}")
+

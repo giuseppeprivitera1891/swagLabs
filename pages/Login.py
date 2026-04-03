@@ -1,4 +1,4 @@
-from playwright.async_api import Page
+from playwright.sync_api import Page
 from pytest_playwright.pytest_playwright import page
 
 class LoginPage:
