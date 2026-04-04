@@ -17,6 +17,10 @@ class CheckoutOverviewPage:
         self.total_label = page.locator("div[data-test='total-label']")
         self.cancel_button = page.get_by_role("button", name="Cancel")
         self.finish_button = page.get_by_role("button", name="Finish")
+        self.checkout_complete_label = page.locator("span[class='title']")
+        self.thanks_for_order = page.locator("h2[class='complete-header']")
+        self.order_message = page.locator("div[data-test='complete-text']")
+        self.back_home_button = page.get_by_role("button", name="Back Home")
 
         # variables
         self.payment_info_text = "Payment Information:"
@@ -29,6 +33,11 @@ class CheckoutOverviewPage:
         self.total_label_text = "Total: $32.39"
         self.cancel_button_text = "Cancel"
         self.finish_button_text = "Finish"
+        self.checkout_complete_text = "Checkout: Complete!"
+        self.thanks_for_order.text = "Thank you for your order!"
+        self.order_message.text = ("Your order has been dispatched, and will arrive just as fast as the pony can get "
+                                   "there!")
+        self.back_home_button_text = "Back Home"
 
     def check_labels_and_buttons(self):
         # checks if the payment information label is correct
@@ -71,3 +80,10 @@ class CheckoutOverviewPage:
         expect(self.finish_button).to_have_text(self.finish_button_text)
         get_finish_button_text = self.finish_button.text_content()
         print(f'Finish button is: {get_finish_button_text}')
+
+    def confirm_order(self):
+        self.finish_button.click()
+        # checks if the name of the label if correct
+        expect(self.checkout_complete_label).to_have_text(self.checkout_complete_text)
+        get_checkout_complete_label_text = self.checkout_complete_label.text_content()
+        print(f'Checkout complete label is: {get_checkout_complete_label_text}')

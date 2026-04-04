@@ -27,5 +27,6 @@ def test_suite(page:Page):
 
     checkout_overview_page = CheckoutOverviewPage(page)
     checkout_overview_page.check_labels_and_buttons()
+    checkout_overview_page.confirm_order()
 
 
