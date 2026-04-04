@@ -23,7 +23,7 @@ class ProductPage:
 
     def access_to_cart(self):
         self.cart_button.click()
-        # check if the label is correct
+        # check if the label text is correct
         expect(self.cart_label).to_have_text("Your Cart")
         get_cart_text = self.cart_label.text_content()
         print(f"The text of the cart page is: {get_cart_text}")
