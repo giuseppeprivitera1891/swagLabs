@@ -1,4 +1,3 @@
-from _testcapi import awaitType
 from playwright.sync_api import Page, expect
 
 
@@ -13,6 +12,7 @@ class CheckoutPage:
         self.zip_code = page.get_by_placeholder("Zip/Postal Code")
         self.cancel_button = page.locator("#cancel")
         self.continue_button = page.locator("#continue")
+        self.checkout_overview_label = page.locator("span[class='title']")
 
         # variables
         self.first_name_text = "Andrew"
@@ -20,6 +20,7 @@ class CheckoutPage:
         self.zip_code_text = "12345"
         self.cancel_button_text = "Cancel"
         self.continue_button_text = "Continue"
+        self.checkout_overview_text = "Checkout: Overview"
 
     def fill_fields(self):
         self.first_name.fill(self.first_name_text)
@@ -33,6 +34,15 @@ class CheckoutPage:
         expect(self.continue_button).to_have_text(self.continue_button_text)
         get_continue_button_text = self.continue_button.get_attribute("value")
         print(f"The name of the continue button is: {get_continue_button_text}")
+
+    def access_checkout_confirmation_page(self):
+        self.continue_button.click()
+        # checks if the name of the checkout overview is  correct
+        expect(self.checkout_overview_label).to_have_text(self.checkout_overview_text)
+        get_checkout_overview_text = self.checkout_overview_label.text_content()
+        print(f"The checkout overview text is: {get_checkout_overview_text}")
+
+
 
 
 
