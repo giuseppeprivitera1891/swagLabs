@@ -18,9 +18,6 @@ class CheckoutOverviewPage:
         self.cancel_button = page.get_by_role("button", name="Cancel")
         self.finish_button = page.get_by_role("button", name="Finish")
         self.checkout_complete_label = page.locator("span[class='title']")
-        self.thanks_for_order = page.locator("h2[class='complete-header']")
-        self.order_message = page.locator("div[data-test='complete-text']")
-        self.back_home_button = page.get_by_role("button", name="Back Home")
 
         # variables
         self.payment_info_text = "Payment Information:"
@@ -34,10 +31,7 @@ class CheckoutOverviewPage:
         self.cancel_button_text = "Cancel"
         self.finish_button_text = "Finish"
         self.checkout_complete_text = "Checkout: Complete!"
-        self.thanks_for_order.text = "Thank you for your order!"
-        self.order_message.text = ("Your order has been dispatched, and will arrive just as fast as the pony can get "
-                                   "there!")
-        self.back_home_button_text = "Back Home"
+
 
     def check_labels_and_buttons(self):
         # checks if the payment information label is correct
