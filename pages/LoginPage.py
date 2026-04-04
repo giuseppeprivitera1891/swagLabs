@@ -5,6 +5,8 @@ class LoginPage:
     def __init__(self, page: Page):
         print("LoginPage")
         self.page = page
+
+        # locators
         self.username_textField = page.get_by_placeholder("Username")
         self.password_textField = page.get_by_placeholder("Password")
         self.login_button = page.get_by_role("button", name="Login")

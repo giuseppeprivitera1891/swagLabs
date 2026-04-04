@@ -5,12 +5,15 @@ class ProductPage:
     def __init__(self, page: Page):
         print("ProductPage")
         self.page = page
+
+        # locators
         self.add_to_cart_button = page.locator("#add-to-cart-sauce-labs-backpack")
         self.get_element_cart = page.locator("span[class='shopping_cart_badge']")
         self.cart_button = page.locator("a[class*='shopping']")
         self.remove_product_button = page.locator("#remove-sauce-labs-backpack")
         self.cart_label = page.locator("span[class='title']")
 
+        # variables
         self.remove_text_button = "Remove"
         self.number_article_cart = "1"
         self.cart_text_label = "Your Cart"

@@ -5,7 +5,8 @@ class CartPage:
     def __init__(self, page: Page):
         print("CartPage")
         self.page = page
-        self.page = page
+
+        # locators
         self.product_quantity = page.locator("div[class='cart_quantity']")
         self.product_name = page.locator("div[class='inventory_item_name']")
         self.product_description = page.locator("div[class='inventory_item_desc']")
@@ -15,6 +16,7 @@ class CartPage:
         self.checkout_button = page.get_by_role("button", name="Checkout")
         self.checkout_label = page.locator("span[class='title']")
 
+        # variables
         self.product_quantity_text = "1"
         self.product_name_text = "Sauce Labs Backpack"
         self.product_description_text = ("carry.allTheThings() with the sleek, "
