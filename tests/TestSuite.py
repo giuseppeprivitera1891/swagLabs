@@ -18,3 +18,4 @@ def test_suite(page:Page):
     cart_page = CartPage(page)
     cart_page.check_labels_and_buttons()
 
+

@@ -13,6 +13,7 @@ class CartPage:
         self.remove_button = page.get_by_role("button", name="Remove")
         self.continue_shopping_button = page.get_by_role("button", name="Continue Shopping")
         self.checkout_button = page.get_by_role("button", name="Checkout")
+        self.checkout_label = page.locator("div[class='title']")
 
         self.product_quantity_text = "1"
         self.product_name_text = "Sauce Labs Backpack"
@@ -23,6 +24,7 @@ class CartPage:
         self.remove_button_text = "Remove"
         self.continue_shopping_button_text = "Continue Shopping"
         self.checkout_button_text = "Checkout"
+        self.checkout_label_text = "Checkout: Your Information"
 
     def check_labels_and_buttons(self):
         # checks if the quantity of the product is correct
@@ -53,3 +55,10 @@ class CartPage:
         expect(self.checkout_button).to_have_text(self.checkout_button_text)
         get_checkout_text = self.checkout_button.text_content()
         print(f"The text of the checkout button is: {get_checkout_text}")
+
+    def access_to_checkout_page(self):
+        self.checkout_button.click()
+        # checks if the title of the page is correct
+        expect(self.checkout_label).to_have_text(self.checkout_label_text)
+        get_checkout_label_text = self.checkout_label.text_content()
+        print(f"The text of the checkout label is: {get_checkout_label_text}")

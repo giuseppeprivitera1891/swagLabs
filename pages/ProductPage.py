@@ -27,7 +27,7 @@ class ProductPage:
         get_number_article = self.get_element_cart.text_content()
         print(f"The badge text of the article is: {get_number_article}")
 
-    def access_to_cart(self):
+    def access_to_cart_page(self):
         self.cart_button.click()
         # check if the label text is correct
         expect(self.cart_label).to_have_text(self.cart_text_label)
