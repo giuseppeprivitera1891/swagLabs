@@ -22,5 +22,6 @@ def test_suite(page:Page):
 
     checkout_page = CheckoutPage(page)
     checkout_page.fill_fields()
+    checkout_page.access_checkout_confirmation_page()
 
 
