@@ -12,5 +12,5 @@ def test_suite(page:Page):
 
     product_page = ProductPage(page)
     product_page.add_to_cart()
-    product_page.check_status_product_button()
+
 

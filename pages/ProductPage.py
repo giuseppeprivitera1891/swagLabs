@@ -10,14 +10,19 @@ class ProductPage:
 
     def add_to_cart(self):
         self.add_to_cart_button.click()
+        # check if the "Add to cart" has "Remove" text after the click
+        expect(self.remove_product_button).to_have_text("Remove")
+        get_remove_text_button = self.remove_product_button.text_content()
+        print(f"The text of the button is: {get_remove_text_button}")
+        # check if the cart button has the badge with "1" article
         expect(self.get_element_cart).to_have_text("1")
         get_number_article = self.get_element_cart.text_content()
         print(f"The badge text of the article is: {get_number_article}")
 
-    def check_status_product_button(self):
-        expect(self.remove_product_button).to_have_text("Remove")
-        get_remove_text_button = self.remove_product_button.text_content()
-        print(f"The text of the button is: {get_remove_text_button}")
+
+
+
+
 
 
 
