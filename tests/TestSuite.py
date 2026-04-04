@@ -13,9 +13,10 @@ def test_suite(page:Page):
 
     product_page = ProductPage(page)
     product_page.add_to_cart()
-    product_page.access_to_cart()
+    product_page.access_to_cart_page()
 
     cart_page = CartPage(page)
     cart_page.check_labels_and_buttons()
+    cart_page.access_to_checkout_page()
 
 

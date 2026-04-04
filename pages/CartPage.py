@@ -13,7 +13,7 @@ class CartPage:
         self.remove_button = page.get_by_role("button", name="Remove")
         self.continue_shopping_button = page.get_by_role("button", name="Continue Shopping")
         self.checkout_button = page.get_by_role("button", name="Checkout")
-        self.checkout_label = page.locator("div[class='title']")
+        self.checkout_label = page.locator("span[class='title']")
 
         self.product_quantity_text = "1"
         self.product_name_text = "Sauce Labs Backpack"
