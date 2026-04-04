@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 
 class CheckoutOverviewPage:
@@ -19,13 +19,19 @@ class CheckoutOverviewPage:
         self.finish_button = page.get_by_role("button", name="Finish")
 
         # variables
-        payment_info_text = "Payment Information:"
-        payment_value_text = "SauceCard #31337"
-        shipping_info_text = "Shipping Information:"
-        shipping_value_text = "Free Pony Express Delivery!"
-        price_info_text = "Price Total"
-        subtotal_label_text = "Item total: $29.99"
-        tax_label_text = "Tax: $2.40"
-        total_label_text = "Total: $32.39"
-        cancel_button_text = "Cancel"
-        finish_button_text = "Finish"
+        self.payment_info_text = "Payment Information:"
+        self.payment_value_text = "SauceCard #31337"
+        self.shipping_info_text = "Shipping Information:"
+        self.shipping_value_textshipping_value_text = "Free Pony Express Delivery!"
+        self.price_info_text = "Price Total"
+        self.subtotal_label_text = "Item total: $29.99"
+        self.tax_label_text = "Tax: $2.40"
+        self.total_label_text = "Total: $32.39"
+        self.cancel_button_text = "Cancel"
+        self.finish_button_text = "Finish"
+
+    def check_labels_and_buttons(self):
+        # checks if the payment information label is correct
+        expect(self.payment_info).to_have_text(self.payment_info_text)
+        get_payment_info_text = self.payment_info.text_content()
+        print(f'Payment Information label is: {get_payment_info_text}')
