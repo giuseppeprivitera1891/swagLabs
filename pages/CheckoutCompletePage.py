@@ -33,7 +33,7 @@ class CheckoutCompletePage:
         get_home_button_text = self.back_home_button.text_content()
         print(f"The back home button is: {get_home_button_text}")
 
-    def back_home(self):
+    def back_home_page(self):
         self.back_home_button.click()
         # checks if the user backs to home page
         expect(self.product_label).to_have_text(self.product_label_text)

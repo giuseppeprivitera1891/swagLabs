@@ -32,5 +32,6 @@ def test_suite(page:Page):
 
     checkout_complete_page = CheckoutCompletePage(page)
     checkout_complete_page.check_messages_and_button()
+    checkout_complete_page.back_home_page()
 
 
