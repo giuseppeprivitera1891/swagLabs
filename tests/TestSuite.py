@@ -1,6 +1,7 @@
 from playwright.async_api import Page
 
 from pages.CartPage import CartPage
+from pages.CheckoutPage import CheckoutPage
 from pages.ProductPage import ProductPage
 from pages.LoginPage import LoginPage
 
@@ -18,5 +19,8 @@ def test_suite(page:Page):
     cart_page = CartPage(page)
     cart_page.check_labels_and_buttons()
     cart_page.access_to_checkout_page()
+
+    checkout_page = CheckoutPage(page)
+    checkout_page.fill_fields()
 
 
