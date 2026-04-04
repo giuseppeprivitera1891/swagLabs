@@ -1,7 +1,7 @@
 from playwright.async_api import Page
 
 from pages.ProductPage import ProductPage
-from pages.Login import LoginPage
+from pages.LoginPage import LoginPage
 
 
 def test_suite(page:Page):
