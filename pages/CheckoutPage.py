@@ -11,5 +11,12 @@ class CheckoutPage:
         self.last_name = page.get_by_placeholder("Last Name")
         self.zip_code = page.get_by_placeholder("Zip/Postal Code")
 
+        # variables
+        self.first_name_text = "Andrew"
+        self.last_name_text = "Brown"
+        self.zip_code_text = "12345"
+
+
+
 
 
