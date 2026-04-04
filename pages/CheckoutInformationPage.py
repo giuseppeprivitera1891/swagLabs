@@ -1,9 +1,9 @@
 from playwright.sync_api import Page, expect
 
 
-class CheckoutPage:
+class CheckoutInformationPage:
     def __init__(self, page: Page):
-        print("CheckoutPage")
+        print("CheckoutInformationPage")
         self.page = page
 
         # locators
