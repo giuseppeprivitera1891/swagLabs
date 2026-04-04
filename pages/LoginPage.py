@@ -3,6 +3,7 @@ from pytest_playwright.pytest_playwright import page
 
 class LoginPage:
     def __init__(self, page: Page):
+        print("LoginPage")
         self.page = page
         self.username_textField = page.get_by_placeholder("Username")
         self.password_textField = page.get_by_placeholder("Password")
