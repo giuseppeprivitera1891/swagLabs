@@ -8,8 +8,8 @@ from pages.LoginPage import LoginPage
 from pages.ProductPage import ProductPage
 
 
-def test_suite(page:Page):
-    page.goto("/")
+def test_suite(base_url, page:Page):
+    page.goto(base_url)
 
     login_page = LoginPage(page)
     login_page.login_to_application("standard_user", "secret_sauce")
