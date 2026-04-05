@@ -9,7 +9,7 @@ from pages.ProductPage import ProductPage
 
 
 def test_suite(page:Page):
-    page.goto("https://www.saucedemo.com")
+    page.goto("/")
 
     login_page = LoginPage(page)
     login_page.login_to_application("standard_user", "secret_sauce")
