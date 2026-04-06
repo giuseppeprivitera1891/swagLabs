@@ -7,6 +7,7 @@ from pages.CheckoutOverviewPage import CheckoutOverviewPage
 from pages.LoginPage import LoginPage
 from pages.ProductPage import ProductPage
 
+
 def test_suite(base_url, page: Page):
     page.goto(base_url)
 
