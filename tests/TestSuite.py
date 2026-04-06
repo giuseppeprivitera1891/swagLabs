@@ -1,4 +1,4 @@
-from playwright.async_api import Page
+from playwright.sync_api import Page
 
 from pages.CartPage import CartPage
 from pages.CheckoutCompletePage import CheckoutCompletePage
@@ -7,8 +7,7 @@ from pages.CheckoutOverviewPage import CheckoutOverviewPage
 from pages.LoginPage import LoginPage
 from pages.ProductPage import ProductPage
 
-
-def test_suite(base_url, page:Page):
+def test_suite(base_url, page: Page):
     page.goto(base_url)
 
     login_page = LoginPage(page)
