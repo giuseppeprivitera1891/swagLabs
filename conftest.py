@@ -1,4 +1,5 @@
 import pytest
+from pytest_playwright.pytest_playwright import browser
 
 
 @pytest.fixture(scope="session")
