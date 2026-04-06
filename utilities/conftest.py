@@ -11,7 +11,7 @@ def browser_context(playwright, browser_context_args):
 
 pytest.fixture(scope="function")
 def page(browser_context, base_url):
-    page = browser = browser_context.new_page()
+    page = browser_context.new_page()
     page.goto(base_url)
     yield page
     page.close()
