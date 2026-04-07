@@ -1,2 +1,2 @@
 # swagLabs
-An example of Playwright project with Python
+Automated testing of the purchase process on an e-commerce site using Playwright, Pytest and Python.
